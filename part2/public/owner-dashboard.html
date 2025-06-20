@@ -75,13 +75,14 @@
           'Content-Type': 'application/json'
         }
       });
-      
+
         if(response.ok){
             window.location.href = "index.html";
           }else{
             console.log("Logout failed!");
           }
-      }});
+      } catch(err){
+    });
   </script>
 
   <script>
