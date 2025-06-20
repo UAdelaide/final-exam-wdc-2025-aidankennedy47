@@ -28,7 +28,8 @@
     createApp({
       data() {
         return {
-          message: 'Welcome to the Dog Walking Service!'
+          message: 'Welcome to the Dog Walking Service!',
+          dogs
         };
       },
       methods:{
@@ -41,7 +42,7 @@
             },
             async loadRegisteredList() {
               let response = await fetch('/api/users/dogs');
-              let data = await
+              let data = await response.json();
             }
       }
       }).mount('#app');
