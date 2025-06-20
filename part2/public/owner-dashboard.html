@@ -87,8 +87,7 @@
 
         async function loadDogs(){
           let response = await fetch('/api/call');
-          let data = await response.json();
-          this.image = data.message;
+          dogs.value = await response.json();
         }
 
         async function loadWalks() {
