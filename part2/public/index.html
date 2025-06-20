@@ -51,7 +51,9 @@
         let result = await response.json();
 
         if (result.ok){
-          ifwindow.location.href= 'owner-dashboard.html';
+          if(role === 'owner'){
+            window.location.href= 'owner-dashboard.html';
+          }else if(r)
         }
 
       }catch(err){
