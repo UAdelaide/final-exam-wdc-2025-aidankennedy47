@@ -86,7 +86,9 @@
         const dogs = ref([]);
 
         async function loadDogs(){
-          
+          let response = await fetch('https://dog.ceo/api/breeds/image/random');
+          let data = await response.json();
+          this.image = data.message;
         }
 
         async function loadWalks() {
