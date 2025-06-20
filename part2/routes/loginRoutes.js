@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../models/db');
 
 router.get('/', async (req, res) => {
-  
+
 });
 
 module.exports = router;
