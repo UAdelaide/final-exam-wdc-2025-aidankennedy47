@@ -68,7 +68,7 @@
   <script>
     document.getElementById("logoutButton").addEventListener('click', async function () {
       try{
-        await fetch('/api/users/logout', {
+        let response = await fetch('/api/users/logout', {
         method: 'POST',
         credentials: "include",
         headers: {
