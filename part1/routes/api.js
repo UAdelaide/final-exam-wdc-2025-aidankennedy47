@@ -3,7 +3,15 @@ var router = express.Router();
 var db = require('../db');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/dogs', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
+router.get('/dogs', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
+router.get('/dogs', function(req, res, next) {
   res.send('respond with a resource');
 });
 
