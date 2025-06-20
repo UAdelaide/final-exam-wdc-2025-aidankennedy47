@@ -67,11 +67,11 @@
   <script>
     document.getElementById("logoutButton").addEventListener('click', async => {
       await fetch('/api/users/login', {
-          method: 'POST',
-          credentials: "include",
-          headers: {
-            'Content-Type': 'application/json'
-          },
+        method: 'POST',
+        credentials: "include",
+        headers: {
+          'Content-Type': 'application/json'
+        }
           body: JSON.stringify({ username, password })
       }catch(err){
         console.error('Logout unsuccessful');
