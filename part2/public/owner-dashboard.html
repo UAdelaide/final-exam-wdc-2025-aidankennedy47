@@ -66,9 +66,9 @@
 
   <script>
     document.getElementById("logoutButton").addEventListener('click', async => {
-      try{
-        await fetch('/api/users/login', {
+      await fetch('/api/users/login', {
           method: 'POST',
+          credentials: "include",
           headers: {
             'Content-Type': 'application/json'
           },
