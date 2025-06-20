@@ -52,7 +52,7 @@
               let response = await fetch('/api/users/dogs');
               let data = await response.json();
 
-              for (let dog of this.loadRegisteredList){
+              for (let dog of this.registeredDogs){
                 let imgResponse = await fetch('https://dog.ceo/api/breeds/image/random');
                 let imgData = await imgResponse.json();
                 dog.photo = imgData.message;
