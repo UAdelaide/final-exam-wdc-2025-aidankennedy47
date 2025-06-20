@@ -28,6 +28,7 @@
                 let data = await response.json();
                 console.log(data.message);
                 this.image = data.message;
+                console.log(this.image);
             }
         }
         }).mount('#app');
