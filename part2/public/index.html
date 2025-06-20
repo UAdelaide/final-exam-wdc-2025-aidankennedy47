@@ -20,7 +20,7 @@
       <button type="submit">Log In</button>
     </form>
     <h1>All Registered Dogs</h1>
-    
+
   </div>
 
   <script>
@@ -38,7 +38,7 @@
                 let data = await response.json();
                 this.image = data.message;
                 console.log(this.image);
-            }
+            },
       }
       }).mount('#app');
   </script>
