@@ -86,8 +86,12 @@
         const dogs = ref([]);
 
         async function loadDogs(){
-          let response = await fetch('/api/call');
-          dogs.value = await response.json();
+          try{
+            let response = await fetch('/api/call');
+            dogs.value = await response.json();
+          } catch (err) {
+            
+          }
         }
 
         async function loadWalks() {
