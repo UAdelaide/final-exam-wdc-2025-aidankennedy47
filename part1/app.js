@@ -187,7 +187,7 @@ app.get('/api/walkers/summary', async (req, res) => {
          JOIN Users ON Dogs.owner_id = Users.user_id`);
     res.json(walkers);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch Dogs' });
+    res.status(500).json({ error: 'Failed to fetch walkers' });
   }
 });
 
