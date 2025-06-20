@@ -60,7 +60,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', async (req, res) => {
-  console.log("delet")
+  console.log("logging out and deleting session");
   req.session.destroy((err) => {  //deletes session
     if(err){
       console.log("Logout error: ", err);
