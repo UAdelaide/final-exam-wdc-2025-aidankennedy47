@@ -45,9 +45,9 @@
               let data = await response.json();
             }
       }
-      mounted(() => {
-              loadRegisteredList();
-            });
+      mounted() {
+        this.loadRegisteredList();
+      });
       }).mount('#app');
   </script>
 
