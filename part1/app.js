@@ -169,7 +169,7 @@ app.get('/api/dogs', async (req, res) => {
 // Route to return walk requests as JSON
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const [requests] = await db.execute(`SELECT WalkRequests.request_id, Dogs.name AS dog_name, WalkRequests.requested_time, WalkRequests.
+    const [requests] = await db.execute(`SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, 
          FROM Dogs
          JOIN Users ON Dogs.owner_id = Users.user_id`);
     res.json(requests);
