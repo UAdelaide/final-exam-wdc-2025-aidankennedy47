@@ -6,9 +6,9 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
-<body>
+<body class="background">
     <div id="app">
-        <h1>Press button for Dog of the Day!</h1>
+        <h1 class="text">Press button for Dog of the Day!</h1>
         <button class="button" type="button" @click="loadDog">Click me!</button>
         <div v-if="image">
             <img :src="image">
