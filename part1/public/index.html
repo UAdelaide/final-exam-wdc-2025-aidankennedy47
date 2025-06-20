@@ -10,7 +10,9 @@
     <div id="app">
         <h1>Press button for Dog of the Day!</h1>
         <button @click="loadDog">Click me!</button>
-        <div v-if
+        <div v-if="image">
+            <img
+        </div>
     </div>
     <script>
         const { createApp } = Vue;
