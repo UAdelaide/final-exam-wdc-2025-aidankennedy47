@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 let db;
 
-(async function initialiseDB() => {
+(async () => {
   try {
     // Connect to MySQL without specifying a database
     const connection = await mysql.createConnection({
@@ -146,7 +146,6 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Luna' AND owner_id = (SELECT user_id FROM Users WHERE username = 'dave')),
         '2025-06-10 15:00:00', 40, 'Rundle Mall', 'cancelled')
       `);
-      return db;
     }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
