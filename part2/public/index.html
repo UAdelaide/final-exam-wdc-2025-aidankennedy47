@@ -28,7 +28,7 @@
         <th>Owner ID</th>
         <th>Photo</th>
       </tr>
-      <tr v-for="dog in dogs" :value="dog.dog_id" :key="dog.dog_id">
+      <tr v-for="dog in registeredDogs" :value="dog.dog_id" :key="dog.dog_id">
         <th>{{ dog.dog_id }}</th>
         <th>{{ dog.name }}</th>
         <th>{{ dog.size }}</th>
