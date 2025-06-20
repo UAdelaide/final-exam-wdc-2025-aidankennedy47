@@ -95,6 +95,34 @@ let db;
         ('1984', 'George Orwell'),
         ('To Kill a Mockingbird', 'Harper Lee'),
         ('Brave New World', 'Aldous Huxley')
+        INSERT INTO Users (username, email, password_hash, role)
+          VALUES
+          ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+          ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+          ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+          ('aidan', 'aidan@example.com', 'hashed999', 'walker'),
+          ('dave', 'dave@example.com', 'hashed000', 'owner');
+
+          INSERT INTO Dogs (owner_id, name, size)
+          VALUES
+          ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
+          ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
+          ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 'Bigman', 'large'),
+          ((SELECT user_id FROM Users WHERE username = 'aidan'), 'Sapphire', 'small'),
+          ((SELECT user_id FROM Users WHERE username = 'dave'), 'Luna', 'medium');
+
+          INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+          VALUES
+          ((SELECT dog_id FROM Dogs WHERE name = 'Max' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice123')),
+          '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+          ((SELECT dog_id FROM Dogs WHERE name = 'Bella' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol123')),
+          '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+          ((SELECT dog_id FROM Dogs WHERE name = 'Bigman' AND owner_id = (SELECT user_id FROM Users WHERE username = 'bobwalker')),
+          '2025-06-10 10:00:00', 60, 'Botanic Gardens', 'open'),
+          ((SELECT dog_id FROM Dogs WHERE name = 'Sapphire' AND owner_id = (SELECT user_id FROM Users WHERE username = 'aidan')),
+          '2025-06-10 11:30:00', 20, 'Sydney', 'accepted'),
+          ((SELECT dog_id FROM Dogs WHERE name = 'Luna' AND owner_id = (SELECT user_id FROM Users WHERE username = 'dave')),
+          '2025-06-10 15:00:00', 40, 'Rundle Mall', 'cancelled');
       `);
     }
   } catch (err) {
