@@ -3,7 +3,11 @@ const router = express.Router();
 const db = require('../models/db');
 
 router.get('/', async (req, res) => {
-  try {
+  if(){
+
+  }
+  
+    try {
     const [rows] = await db.query(`
       SELECT wr.*, d.name AS dog_name, d.size, u.username AS owner_name
       FROM WalkRequests wr
@@ -18,3 +22,4 @@ router.get('/', async (req, res) => {
   }
 });
 
+module.exports = router;
