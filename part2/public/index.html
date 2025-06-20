@@ -49,11 +49,9 @@
         });
 
         let result = await response.json();
-        console.log(result);
 
         if (response.ok){ //if response is ok, redirects to either owner or walker dashboard based off of role
           let role = result.user.role;
-          console.log(role);
           if(role === 'owner'){
             window.location.href = 'owner-dashboard.html';
           }else if(role === 'walker'){
