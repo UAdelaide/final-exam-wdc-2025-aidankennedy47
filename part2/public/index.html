@@ -40,7 +40,12 @@
       let password = data.get('password');
 
       try{
-        
+        await fetch('/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type'
+          }
+        })
       }
     });
   </script>
