@@ -17,7 +17,7 @@ app.use(session({
     secret: 'secret-key',
     resave: false,
     saveUninitialized: false,
-    cookie
+    cookie: { secure: false }
 }));
 
 app.use('/api/walks', walkRoutes);
