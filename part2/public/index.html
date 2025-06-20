@@ -31,7 +31,25 @@
       }
     }).mount('#app');
   </script>
-
+<script>
+        const { createApp } = Vue;
+        createApp({
+        data(){
+            return {
+                image: null
+            };
+        },
+        methods:{
+            async loadDog() {
+                console.log("loading dog");
+                let response = await fetch('https://dog.ceo/api/breeds/image/random');
+                let data = await response.json();
+                this.image = data.message;
+                console.log(this.image);
+            }
+        }
+        }).mount('#app');
+    </script>
   <script>
     document.getElementById('loginForm').addEventListener('submit', async (page) => { //when submit button is pressed
       page.preventDefault();  //stops page reloading
