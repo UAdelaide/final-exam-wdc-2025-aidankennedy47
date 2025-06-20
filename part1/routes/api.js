@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require('../app');
 
 /* GET users listing. */
-router.get('/dogs', async function(req, res, next) {
+router.get('', async function(req, res, next) {
   try {
     const [rows] = await db.execute(`SELECT Dogs.name AS dog_name, Dogs.size, Users.username AS owner_username
         FROM Dogs
