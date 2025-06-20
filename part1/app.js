@@ -143,7 +143,7 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Sapphire' AND owner_id = (SELECT user_id FROM Users WHERE username = 'aidan')),
         '2025-06-10 11:30:00', 20, 'Sydney', 'accepted'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Luna' AND owner_id = (SELECT user_id FROM Users WHERE username = 'dave')),
-        '2025-06-10 15:00:00', 40, 'Rundle Mall', 'cancelled');
+        '2025-06-10 15:00:00', 40, 'Rundle Mall', 'cancelled')
       `);
     }
   } catch (err) {
