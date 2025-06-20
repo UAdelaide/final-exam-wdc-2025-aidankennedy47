@@ -44,11 +44,10 @@
               let response = await fetch('/api/users/dogs');
               let data = await response.json();
             }
-
-            onMounted(() => {
+      }
+      mounted(() => {
               loadRegisteredList();
             });
-      }
       }).mount('#app');
   </script>
 
