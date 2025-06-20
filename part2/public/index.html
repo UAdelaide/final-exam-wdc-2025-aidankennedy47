@@ -28,9 +28,9 @@
         <th>Owner ID</th>
         <th>Photo</th>
       </tr>
-      <v-if></v-if>
-      <option disabled value="">Select a dog</option>
-      <option v-for="dog in dogs" :value="dog.dog_id" :key="dog.dog_id">{{ dog.name }}</option>
+      <tr v-for="dog in dogs" :value="dog.dog_id" :key="dog.dog_id">
+        <th></th>{{ dog.name }}
+      </tr>
     </table>
   </div>
 
