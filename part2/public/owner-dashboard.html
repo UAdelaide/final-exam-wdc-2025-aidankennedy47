@@ -66,13 +66,15 @@
 
   <script>
     document.getElementById("logoutButton").addEventListener('click', async => {
-      await fetch('/api/users/login', {
+      await fetch('/api/users/logout', {
         method: 'POST',
         credentials: "include",
         headers: {
           'Content-Type': 'application/json'
         }).then((response) => {
-          if(response.ok)
+          if(response.ok){
+            window.location.href = "/api/users"
+          }
         });
   </script>
 
