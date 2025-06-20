@@ -40,13 +40,14 @@
       let password = data.get('password');
 
       try{
-        await fetch('/api/users/login', {
+        let response = await fetch('/api/users/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({ username, password })
         });
+        response
       }catch(err){
         console.error('Login unsuccessful: ', err);
       }
