@@ -27,8 +27,8 @@
         methods:{
             async loadDog() {
                 let response = await fetch('/api/dogs');
-                let data = await response.json();
-                this.image = data.message;
+                let dogs = await response.json();
+                this.image = dogs.;
                 console.log(this.image);
             }
         }
