@@ -36,6 +36,7 @@
     document.getElementById('loginForm').addEventListener('submit', async (page) => {
       page.preventDefault();
       let data = new FormData(loginForm);
+      console.log(data);
       let username = data.get('username');
       let password = data.get('password');
 
