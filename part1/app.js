@@ -184,7 +184,8 @@ app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [walkers] = await db.execute(`SELECT u.username AS walker_username, wrate.count(rating), wrate.average(rating), wreq.count(IF status = 'completed') AS walks_completed
          FROM Dogs d
-         JOIN Users ON Dogs.owner_id = Users.user_id`);
+         JOIN Users u ON d.owner_id = u.user_id
+         `);
     res.json(walkers);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch walkers' });
