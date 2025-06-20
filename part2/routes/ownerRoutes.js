@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
 
   }
 
-  let owner_id = 
+  let owner_id = req.session.user.user_id;
 
     try {
     const [rows] = await db.query(`
