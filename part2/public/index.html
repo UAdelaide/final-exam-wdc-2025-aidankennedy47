@@ -21,7 +21,10 @@
     </form>
     <h1>All Registered Dogs</h1>
     <table>
-      <th>Dog ID</th>
+      <tr>
+        <th>Dog ID</th>
+        
+      </tr>
       <option disabled value="">Select a dog</option>
       <option v-for="dog in dogs" :value="dog.dog_id" :key="dog.dog_id">{{ dog.name }}</option>
     </table>
