@@ -57,8 +57,8 @@
             async loadRegisteredList() {
               let response = await fetch('/api/users/dogs');
               let data = await response.json();
-              let response = await fetch('https://dog.ceo/api/breeds/image/random');
-              let data = await response.json();
+              let imgResponse = await fetch('https://dog.ceo/api/breeds/image/random');
+              let imgData = await response.json();
               this.registeredDogs = data;
               console.log(this.registeredDogs);
             }
