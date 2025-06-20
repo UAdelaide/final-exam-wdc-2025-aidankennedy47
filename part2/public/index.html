@@ -55,7 +55,8 @@
               console.log(this.registeredDogs);
               for (let dog of data){
                 let imgResponse = await fetch('https://dog.ceo/api/breeds/image/random');
-                let imgData = await response.json();
+                let imgData = await imgResponse.json();
+                dog.photo = imgData.message;
               }
             }
       },
