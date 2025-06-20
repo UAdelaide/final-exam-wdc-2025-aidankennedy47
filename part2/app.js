@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
-const ownerRoutes = requie('./routes/ownerRoutes');
+const ownerRoutes = require('./routes/ownerRoutes');
 
 app.use(session({
     secret: 'secret-key',
