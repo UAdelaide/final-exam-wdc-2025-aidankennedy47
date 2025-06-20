@@ -148,6 +148,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         '2025-06-10 15:00:00', 40, 'Rundle Mall', 'cancelled')
       `);
     }
+    return db;
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
