@@ -186,7 +186,7 @@ app.get('/api/walkers/summary', async (req, res) => {
          FROM Users u
          JOIN WalkRatings wrate ON u.user_id = wrate.walker_id
          JOIN WalkRequests wreq ON wrate.request_id = wreq.request_id
-         
+         WHERE u.role = 'walker'
          `);
     res.json(walkers);
   } catch (err) {
