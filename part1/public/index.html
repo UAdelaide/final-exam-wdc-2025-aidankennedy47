@@ -24,7 +24,8 @@
         },
         methods:{
             async loadDog() {
-                this.image = await fetch('https://dog.ceo/api/breeds/image/random');
+                let response = await fetch('https://dog.ceo/api/breeds/image/random');
+                response
             }
         }
         }).mount('#app');
