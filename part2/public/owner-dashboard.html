@@ -90,7 +90,7 @@
             let response = await fetch('/api/call');
             dogs.value = await response.json();
           } catch (err) {
-            
+            error.value = 'Failed to load dog names for dropdown';
           }
         }
 
