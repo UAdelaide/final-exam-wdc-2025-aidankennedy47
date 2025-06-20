@@ -4,7 +4,12 @@ var db = require('../db');
 
 /* GET users listing. */
 router.get('/dogs', function(req, res, next) {
-  res.send('respond with a resource');
+  try {
+    const [Users] = await db.execute('SELECT * FROM Users');
+    res.json(Users);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch users' });
+  }
 });
 
 router.get('/walkrequests/open', function(req, res, next) {
