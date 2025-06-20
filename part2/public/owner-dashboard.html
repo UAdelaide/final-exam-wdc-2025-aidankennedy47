@@ -71,7 +71,7 @@
         credentials: "include",
         headers: {
           'Content-Type': 'application/json'
-        }
+        }).then((response))
           body: JSON.stringify({ username, password })
       }catch(err){
         console.error('Logout unsuccessful');
