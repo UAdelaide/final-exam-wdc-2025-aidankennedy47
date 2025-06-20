@@ -61,7 +61,7 @@
             const res = await fetch('/api/users/me');
             if (!res.ok) throw new Error('Failed to load current user id');
             user.value = await res.json();
-            //console.log("user value from current user", user.value);
+            console.log("user value from current user", user.value);
           } catch (err) {
             error.value = err.message;
           }
@@ -72,9 +72,10 @@
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ walker_id: user.value })
+              body: JSON.stringify({ walker_id: user.value.user_id })
             });
             const result = await res.json();
+            
 
             if (!res.ok) throw new Error(result.error || 'Application failed');
             message.value = result.message;
