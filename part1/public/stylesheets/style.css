@@ -6,3 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
+
+.button{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
