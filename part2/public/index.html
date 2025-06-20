@@ -48,6 +48,9 @@
           body: JSON.stringify({ username, password })
         });
         let result = await response.json();
+        if (reuslt.ok)
+
+
       }catch(err){
         console.error('Login unsuccessful: ', err);
       }
