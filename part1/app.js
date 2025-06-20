@@ -166,6 +166,30 @@ app.get('/api/dogs', async (req, res) => {
   }
 });
 
+// Route to return dogs as JSON
+app.get('/api/dogs', async (req, res) => {
+  try {
+    const [Dogs] = await db.execute(`SELECT Dogs.name AS dog_name, Dogs.size, Users.username AS owner_username
+         FROM Dogs
+         JOIN Users ON Dogs.owner_id = Users.user_id`);
+    res.json(Dogs);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch Dogs' });
+  }
+});
+
+// Route to return dogs as JSON
+app.get('/api/dogs', async (req, res) => {
+  try {
+    const [Dogs] = await db.execute(`SELECT Dogs.name AS dog_name, Dogs.size, Users.username AS owner_username
+         FROM Dogs
+         JOIN Users ON Dogs.owner_id = Users.user_id`);
+    res.json(Dogs);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch Dogs' });
+  }
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
