@@ -53,7 +53,10 @@
               let data = await response.json();
               this.registeredDogs = data;
               console.log(this.registeredDogs);
-              for
+              for (let dog of data){
+                let imgResponse = await fetch('https://dog.ceo/api/breeds/image/random');
+                let imgData = await response.json();
+              }
             }
       },
       mounted() {
