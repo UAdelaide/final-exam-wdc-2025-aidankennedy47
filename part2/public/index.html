@@ -20,7 +20,10 @@
       <button type="submit">Log In</button>
     </form>
     <h1>All Registered Dogs</h1>
-    <table></table>
+    <table>
+      <option disabled value="">Select a dog</option>
+      <option v-for="dog in dogs" :value="dog.dog_id" :key="dog.dog_id">{{ dog.name }}</option>
+    </table>
   </div>
 
   <script>
