@@ -29,11 +29,11 @@
         <th>Photo</th>
       </tr>
       <tr v-for="dog in registeredDogs" :value="dog.dog_id" :key="dog.dog_id">
-        <th>{{ dog.dog_id }}</th>
-        <th>{{ dog.name }}</th>
-        <th>{{ dog.size }}</th>
-        <th>{{ dog.owner_id }}</th>
-        <th></th>
+        <td>{{ dog.dog_id }}</th>
+        <td>{{ dog.name }}</th>
+        <td>{{ dog.size }}</th>
+        <td>{{ dog.owner_id }}</td>
+        <td></td>
       </tr>
     </table>
   </div>
