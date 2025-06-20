@@ -132,13 +132,18 @@ let db;
   [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
     if (rows[0].count === 0) {
       await db.execute(`
-        INSERT INTO Users (username, email, password_hash, role)
+        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
         VALUES
-        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-        ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-        ('aidan', 'aidan@example.com', 'hashed999', 'walker'),
-        ('dave', 'dave@example.com', 'hashed000', 'owner');
+        ((SELECT dog_id FROM Dogs WHERE name = 'Max' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice123')),
+        '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Bella' AND owner_id = (SELECT user_id FROM Users WHERE username = 'carol123')),
+        '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Bigman' AND owner_id = (SELECT user_id FROM Users WHERE username = 'bobwalker')),
+        '2025-06-10 10:00:00', 60, 'Botanic Gardens', 'open'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Sapphire' AND owner_id = (SELECT user_id FROM Users WHERE username = 'aidan')),
+        '2025-06-10 11:30:00', 20, 'Sydney', 'accepted'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Luna' AND owner_id = (SELECT user_id FROM Users WHERE username = 'dave')),
+        '2025-06-10 15:00:00', 40, 'Rundle Mall', 'cancelled');
       `);
     }
   } catch (err) {
