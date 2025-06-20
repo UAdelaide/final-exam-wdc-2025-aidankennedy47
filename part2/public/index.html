@@ -25,9 +25,10 @@
         <th>Dog ID</th>
         <th>Name</th>
         <th>Size</th>
-        <th>Dog ID</th>
-        <th>Dog ID</th>
+        <th>Owner ID</th>
+        <th>Photo</th>
       </tr>
+      <v-if></v-if>
       <option disabled value="">Select a dog</option>
       <option v-for="dog in dogs" :value="dog.dog_id" :key="dog.dog_id">{{ dog.name }}</option>
     </table>
