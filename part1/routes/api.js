@@ -5,9 +5,10 @@ var db = require('../db');
 /* GET users listing. */
 router.get('/dogs', async function(req, res, next) {
   try {
-    const [dogs] = await db.execute('SELECT Dogs.name AS dog_name, Dogs.size, Users.username AS owner_username
+    const [dogs] = await db.execute(`SELECT Dogs.name AS dog_name, Dogs.size, Users.username AS owner_username
         FROM dogs
-        JOIN Users ON dogs.owner_id');
+        JOIN Users ON dogs.owner_id = Users.user_id
+        `);
     res.json(dogs);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch users' });
