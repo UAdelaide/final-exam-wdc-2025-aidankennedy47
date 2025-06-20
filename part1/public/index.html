@@ -10,8 +10,7 @@
     <div id="app">
         <h1>Press button for Dog of the Day!</h1>
         <button type="button" @click="loadDog">Click me!</button>
-        <div v-if="image">
-            <img :src="image">
+        <div v-if="image" img :src="image">
         </div>
     </div>
     <script>
