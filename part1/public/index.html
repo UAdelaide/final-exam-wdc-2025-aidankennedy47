@@ -11,7 +11,7 @@
         <h1>Press button for Dog of the Day!</h1>
         <button type="button" @click="loadDog">Click me!</button>
         <div v-if="image">
-            <img></img>
+            <img v-bind:src="image">
         </div>
     </div>
     <script>
