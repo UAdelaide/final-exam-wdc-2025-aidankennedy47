@@ -102,16 +102,14 @@ let db;
           ('carol123', 'carol@example.com', 'hashed789', 'owner'),
           ('aidan', 'aidan@example.com', 'hashed999', 'walker'),
           ('dave', 'dave@example.com', 'hashed000', 'owner');
-
-          INSERT INTO Dogs (owner_id, name, size)
+        INSERT INTO Dogs (owner_id, name, size)
           VALUES
           ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
           ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
           ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 'Bigman', 'large'),
           ((SELECT user_id FROM Users WHERE username = 'aidan'), 'Sapphire', 'small'),
           ((SELECT user_id FROM Users WHERE username = 'dave'), 'Luna', 'medium');
-
-          INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
           VALUES
           ((SELECT dog_id FROM Dogs WHERE name = 'Max' AND owner_id = (SELECT user_id FROM Users WHERE username = 'alice123')),
           '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
