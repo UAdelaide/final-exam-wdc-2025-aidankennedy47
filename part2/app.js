@@ -14,7 +14,8 @@ const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 app.use(session({
-
+    secret: 'secret-key',
+    
 }));
 
 app.use('/api/walks', walkRoutes);
