@@ -2,12 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-router.get('/', async (req, res) => {
-  if(){
-
-  }
-
-  let owner_id = req.session.user.user_id;
+router.get('/dogs', async (req, res) => {
+    let owner_id = req.session.user.user_id;
 
     try {
     const [rows] = await db.query(`
