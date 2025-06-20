@@ -51,7 +51,7 @@
         let result = await response.json();
         console.log(result);
 
-        if (result.ok){
+        if (response.ok){
           if(role === 'owner'){
             window.location.href = 'owner-dashboard.html';
           }else if(role === 'walker'){
