@@ -33,8 +33,9 @@
   </script>
 
   <script>
-    document.getElementById('loginForm').addEventListener('submit', async() => {
-
+    document.getElementById('loginForm').addEventListener('submit', async (page) => {
+      page.preventDefault();
+      
     })
   </script>
 
