@@ -3,10 +3,10 @@ var router = express.Router();
 var db = require('../db');
 
 /* GET users listing. */
-router.get('/dogs', function(req, res, next) {
+router.get('/dogs', async function(req, res, next) {
   try {
-    const [Users] = await db.execute('SELECT * FROM Users');
-    res.json(Users);
+    const [dogs] = await db.execute('SELECT * FROM Dogs');
+    res.json(dogs);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch users' });
   }
