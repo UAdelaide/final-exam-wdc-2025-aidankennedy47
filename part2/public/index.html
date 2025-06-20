@@ -51,13 +51,15 @@
             async loadRegisteredList() {
               let response = await fetch('/api/users/dogs');
               let data = await response.json();
-              this.registeredDogs = data;
-              console.log(this.registeredDogs);
+
               for (let dog of this.registeredDogs){
                 let imgResponse = await fetch('https://dog.ceo/api/breeds/image/random');
                 let imgData = await imgResponse.json();
                 dog.photo = imgData.message;
               }
+
+              this.registeredDogs = data;
+              console.log(this.registeredDogs);
             }
       },
       mounted() {
