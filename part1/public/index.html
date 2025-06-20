@@ -26,7 +26,7 @@
         },
         methods:{
             async loadDog() {
-                let response = await fetch('https://dog.ceo/api/breeds/image/random');
+                let response = await fetch('/api/dogs');
                 let data = await response.json();
                 this.image = data.message;
                 console.log(this.image);
