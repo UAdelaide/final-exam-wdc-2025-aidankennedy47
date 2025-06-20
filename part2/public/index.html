@@ -28,7 +28,15 @@
         return {
           message: 'Welcome to the Dog Walking Service!'
         };
-      }
+      },
+      methods:{
+            async loadDog() {
+                console.log("loading dog");
+                let response = await fetch('https://dog.ceo/api/breeds/image/random');
+                let data = await response.json();
+                this.image = data.message;
+                console.log(this.image);
+            }
     }).mount('#app');
   </script>
 <script>
