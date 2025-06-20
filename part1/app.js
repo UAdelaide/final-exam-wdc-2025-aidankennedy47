@@ -146,11 +146,11 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Luna' AND owner_id = (SELECT user_id FROM Users WHERE username = 'dave')),
         '2025-06-10 15:00:00', 40, 'Rundle Mall', 'cancelled')
       `);
+      return db;
     }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
-  return db;
 })();
 
 
