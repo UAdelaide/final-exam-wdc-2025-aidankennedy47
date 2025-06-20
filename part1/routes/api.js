@@ -11,6 +11,7 @@ router.get('/dogs', async function(req, res, next) {
         `);
     res.json(dogs);
   } catch (err) {
+    console.log("Error in ")
     res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 });
