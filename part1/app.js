@@ -185,7 +185,7 @@ app.get('/api/walkers/summary', async (req, res) => {
     const [walkers] = await db.execute(`SELECT u.username AS walker_username, wrate.count(rating), wrate.average(rating), wreq.count(IF status = 'completed') AS walks_completed
          FROM Users u
          JOIN WalkRatings wrate ON u.user_id = u.walker_id
-         JOIN WalkRequests
+         JOIN WalkRequests wreq ON wrate.
          `);
     res.json(walkers);
   } catch (err) {
