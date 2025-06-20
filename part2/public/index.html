@@ -59,6 +59,7 @@
               let response = await fetch('/api/users/dogs');
               let data = await response.json();
               this.registeredDogs = data;
+              console.log(this.registeredDogs);
             }
       },
       mounted() {
