@@ -48,7 +48,7 @@
         };
       },
       methods:{
-            async loadDog() {
+            async loadDogPhoto() {
                 console.log("loading dog");
                 let response = await fetch('https://dog.ceo/api/breeds/image/random');
                 let data = await response.json();
