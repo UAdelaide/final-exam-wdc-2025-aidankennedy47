@@ -182,7 +182,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 // Route to return walkers as JSON
 app.get('/api/walkers/summary', async (req, res) => {
   try {
-    const [walkers] = await db.execute(`SELECT u.username AS walker_username, COUNT(wrate.rating) AS total_ratings, AVERAGE(wrate.rating) AS average_rating, COUNT(wreq.statusIF status = 'completed') AS walks_completed
+    const [walkers] = await db.execute(`SELECT u.username AS walker_username, COUNT(wrate.rating) AS total_ratings, AVERAGE(wrate.rating) AS average_rating, COUNT(IF wreq.status = 'completed') AS walks_completed
          FROM Users u
          JOIN WalkRatings wrate ON u.user_id = u.walker_id
          JOIN WalkRequests wreq ON wrate.
