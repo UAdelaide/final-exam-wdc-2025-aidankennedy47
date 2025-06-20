@@ -43,8 +43,9 @@
         await fetch('/login', {
           method: 'POST',
           headers: {
-            'Content-Type'
-          }
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({username, password})
         })
       }
     });
