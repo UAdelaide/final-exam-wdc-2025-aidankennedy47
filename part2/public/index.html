@@ -34,8 +34,8 @@
 
   <script>
     document.getElementById('loginForm').addEventListener('submit', async (page) => { //when submit button is pressed
-      page.preventDefault();  //
-      let data = new FormData(loginForm);
+      page.preventDefault();  //stops page reloading
+      let data = new FormData(loginForm); //gets form data from login
       let username = data.get('username');
       let password = data.get('password');
 
