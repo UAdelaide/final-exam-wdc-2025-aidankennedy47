@@ -112,20 +112,20 @@ let db;
         ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
         ('carol123', 'carol@example.com', 'hashed789', 'owner'),
         ('aidan', 'aidan@example.com', 'hashed999', 'walker'),
-        ('dave', 'dave@example.com', 'hashed000', 'owner');
+        ('dave', 'dave@example.com', 'hashed000', 'owner')
       `);
     }
 
   [rows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
     if (rows[0].count === 0) {
       await db.execute(`
-        INSERT INTO Users (username, email, password_hash, role)
+        INSERT INTO Dogs (owner_id, name, size)
         VALUES
-        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-        ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-        ('aidan', 'aidan@example.com', 'hashed999', 'walker'),
-        ('dave', 'dave@example.com', 'hashed000', 'owner');
+        ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
+        ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
+        ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 'Bigman', 'large'),
+        ((SELECT user_id FROM Users WHERE username = 'aidan'), 'Sapphire', 'small'),
+        ((SELECT user_id FROM Users WHERE username = 'dave'), 'Luna', 'medium')
       `);
     }
 
