@@ -85,7 +85,7 @@
         const error = ref('');
         const dogs = ref([]);
 
-        async function loadDogs(){
+        async function loadDogPhoto(){
           try{
             let response = await fetch('/api/owners/dogs');
             dogs.value = await response.json();
@@ -132,7 +132,7 @@
 
         onMounted(() => {
           loadWalks();
-          loadDogs();
+          loadDogPhoto();
         });
 
         return {
