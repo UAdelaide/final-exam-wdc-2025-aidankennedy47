@@ -5,7 +5,7 @@ var db = require('../app');
 /* GET users listing. */
 router.get('/dogs', async function(req, res, next) {
   try {
-    const conn = await connection;
+    const conn = await db;
     const [dogs] = await db.execute(`SELECT Dogs.name AS dog_name, Dogs.size, Users.username AS owner_username
         FROM Dogs
         JOIN Users ON Dogs.owner_id = Users.user_id
