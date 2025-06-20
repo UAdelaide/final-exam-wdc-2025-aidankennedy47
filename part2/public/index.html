@@ -17,7 +17,7 @@
       <input type="text" name="username" required>
       <p>Password</p>
       <input type="password" name="password" required>
-      <button type="submit">Log In</button>
+      <button id="loginButton" type="submit">Log In</button>
     </form>
     <h1>All Registered Dogs</h1>
     <table>
@@ -57,7 +57,7 @@
                 let imgData = await imgResponse.json();
                 dog.photo = imgData.message;
               }
-              
+
               this.registeredDogs = data;
               console.log(this.registeredDogs);
             }
