@@ -59,16 +59,14 @@ let db;
 })();
 
 // Route to return books as JSON
-app.get('/api/dogs', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
-    const [dogs] = await db.execute('SELECT * FROM Dogs');
-    res.json(dogs);
+    const [books] = await db.execute('SELECT * FROM books');
+    res.json(books);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch dogs' });
+    res.status(500).json({ error: 'Failed to fetch books' });
   }
 });
-
-
 
 app.use(express.static(path.join(__dirname, 'public')));
 
