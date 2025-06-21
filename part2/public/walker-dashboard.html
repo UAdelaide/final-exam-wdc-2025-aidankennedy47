@@ -60,7 +60,7 @@
 
         async function getCurrentUser(){
           try {
-            // 
+            // makes request
             const res = await fetch('/api/users/me');
             if (!res.ok) throw new Error('Failed to load current user id');
             user.value = await res.json();
