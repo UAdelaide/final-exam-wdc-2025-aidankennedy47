@@ -89,6 +89,7 @@
 
         async function loadDogs(){
           try{
+            // 
             let response = await fetch('/api/owners/dogs');
             dogs.value = await response.json();
           } catch (err) {
