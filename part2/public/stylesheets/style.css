@@ -20,7 +20,7 @@
     border: 1px solid red;
     border-radius: 5px;
     padding: 10px;
-    
+    background: transparent;
 }
 
 table, th, td{
