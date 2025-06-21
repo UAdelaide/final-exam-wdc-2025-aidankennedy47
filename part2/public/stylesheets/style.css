@@ -17,7 +17,7 @@
 table{
     max-width: 600px;
     width: 100%;
-    border: red;
+    border: 1px solid black;
 }
 
 table img{
