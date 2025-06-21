@@ -49,11 +49,12 @@ router.post('/login', async (req, res) => {
       WHERE username = ? AND password_hash = ?
     `, [username, password]);
 
-    //if there is no user with that username and password
+    //if there is no user with that username and password, there is an error
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
+    //user session is updated with user credentials from database
     req.session.user = rows[0];
     console.log('Stored user in session: ', req.session.user);
 
