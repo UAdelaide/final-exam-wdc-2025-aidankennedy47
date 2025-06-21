@@ -46,6 +46,7 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
+        //
         const user = ref('');
 
         async function loadWalkRequests() {
@@ -84,7 +85,7 @@
               body: JSON.stringify({ walker_id: user.value.user_id })
             });
             const result = await res.json();
-            console.log("checking if body has user_id", result);
+            //console.log("checking if body has user_id", result);
 
             if (!res.ok) throw new Error(result.error || 'Application failed');
             message.value = result.message;
