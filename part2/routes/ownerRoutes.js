@@ -3,11 +3,11 @@ const router = express.Router();
 const db = require('../models/db');
 
 router.get('/dogs', async (req, res) => {
-  /
-    let owner_id = req.session.user.user_id;
-    // console.log(owner_id);
+  // gets owner
+  let owner_id = req.session.user.user_id;
+  // console.log(owner_id);
 
-    try {
+  try {
     const [rows] = await db.query(`
       SELECT dog_id, name FROM Dogs WHERE owner_id = ?
     `, [owner_id]);
