@@ -74,7 +74,8 @@
   <script>
     //script that listens for submit, takes the form, and sends it to /api/users/login
     document.getElementById('loginForm').addEventListener('submit', async (page) => { //when submit button is pressed
-      page.preventDefault();  //stops page reloading
+      //stops page reloading
+      page.preventDefault();
 
       //gets form data from login
       let data = new FormData(loginForm);
