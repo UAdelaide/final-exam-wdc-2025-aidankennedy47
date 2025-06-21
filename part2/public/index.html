@@ -93,7 +93,8 @@
 
         let result = await response.json();
 
-        if (response.ok){ //if response is ok, redirects to either owner or walker dashboard based off of role
+        //if response is ok, redirects to either owner or walker dashboard based off of role
+        if (response.ok){
           let role = result.user.role;
           if(role === 'owner'){
             window.location.href = 'owner-dashboard.html';
