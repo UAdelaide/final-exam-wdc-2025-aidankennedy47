@@ -39,17 +39,17 @@ router.get('/me', (req, res) => {
 router.post('/login', async (req, res) => {
   console.log('POST /api/users/login');
 
-  //deconstructs username and password from request body
+  // deconstructs username and password from request body
   const { username, password } = req.body;
   console.log(req.body);
   try {
-    //finds user_id, username, and role from the Users table where the username and password match a user
+    // finds user_id, username, and role from the Users table where the username and password match a user
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
       WHERE username = ? AND password_hash = ?
     `, [username, password]);
 
-    //if there is no user with that username and password, there is an error
+    // if there is no user with that username and password, there is an error
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
