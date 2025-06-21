@@ -80,7 +80,7 @@
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
 
-              // 
+              // edited walker_id to be user.value.user_id
               body: JSON.stringify({ walker_id: user.value.user_id })
             });
             const result = await res.json();
