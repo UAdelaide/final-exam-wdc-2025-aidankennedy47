@@ -39,7 +39,7 @@ router.get('/me', (req, res) => {
 router.post('/login', async (req, res) => {
   console.log('POST /api/users/login');
 
-  //deconstructs username and password from request
+  //deconstructs username and password from request body
   const { username, password } = req.body;
   console.log(req.body);
   try {
