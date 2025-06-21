@@ -13,7 +13,7 @@
   <div id="app" class="container py-4">
     <h1 class="mb-4 text-success">Walker Dashboard</h1>
     <button class="logout" type="button" id="logoutButton">Logout</button>
-  </div>
+
     <!-- Alert messages -->
     <div v-if="message" class="alert alert-info">{{ message }}</div>
     <div v-if="error" class="alert alert-danger">{{ error }}</div>
@@ -35,6 +35,7 @@
       </div>
     </div>
     <p v-else>No available walk requests at the moment.</p>
+  </div>
   </div>
 
   <script>
