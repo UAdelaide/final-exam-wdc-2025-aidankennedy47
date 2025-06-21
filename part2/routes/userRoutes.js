@@ -37,7 +37,7 @@ router.get('/me', (req, res) => {
 
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
-  console.log('POST /api/users/login');
+  // console.log('POST /api/users/login');
 
   // deconstructs username and password from request body
   const { username, password } = req.body;
@@ -66,7 +66,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', async (req, res) => {
-  console.log("logging out and deleting session");
+  // console.log("logging out and deleting session");
   // deletes session
   req.session.destroy((err) => {
     if(err){
