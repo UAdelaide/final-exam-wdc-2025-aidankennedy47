@@ -14,6 +14,11 @@
     align-items: center;
 }
 
+.logout{
+    top:50px;
+    right:50px;
+}
+
 table, th, td{
     max-width: 600px;
     width: 100%;
