@@ -12,6 +12,8 @@
 
 .wrapper{
     position: relative;
+    flex-direction: column;
+    align-items: center;
 }
 
 body {
