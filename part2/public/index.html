@@ -72,7 +72,7 @@
   </script>
 
   <script>
-    //script that listens for submit
+    //script that listens for submit, takes the form, and sends it to 
     document.getElementById('loginForm').addEventListener('submit', async (page) => { //when submit button is pressed
       page.preventDefault();  //stops page reloading
       let data = new FormData(loginForm); //gets form data from login
