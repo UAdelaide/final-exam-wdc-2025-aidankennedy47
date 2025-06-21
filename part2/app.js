@@ -14,6 +14,7 @@ const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 const ownerRoutes = require('./routes/ownerRoutes');
 
+// Session
 app.use(session({
     secret: 'secret-key',
     resave: false,
