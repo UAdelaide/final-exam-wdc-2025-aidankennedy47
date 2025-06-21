@@ -54,11 +54,11 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    //user session is updated with user credentials from database
+    // user session is updated with user credentials from database
     req.session.user = rows[0];
     console.log('Stored user in session: ', req.session.user);
 
-    //responds with successful login and user credentials
+    // responds with successful login and user credentials
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
@@ -67,12 +67,12 @@ router.post('/login', async (req, res) => {
 
 router.post('/logout', async (req, res) => {
   console.log("logging out and deleting session");
-  req.session.destroy((err) => {  //deletes session
+  req.session.destroy((err) => {  // deletes session
     if(err){
       console.log("Logout error: ", err);
       return res.status(500).json({ message: 'Logout failed!' });
     }
-    res.clearCookie('connect.sid'); //deletes cookie
+    res.clearCookie('connect.sid'); // deletes cookie
     res.json({ message: 'Logged out successfully!' });
   });
 });
