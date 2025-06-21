@@ -8,13 +8,13 @@ router.get('/dogs', async (req, res) => {
   // console.log(owner_id);
 
   try {
-    // queries the database for dog_id of the dogs owned by owner_id
+    // queries the database for dog_id and name of the dogs owned by owner_id
     const [rows] = await db.query(`
       SELECT dog_id, name FROM Dogs WHERE owner_id = ?
     `, [owner_id]);
     // console.log(rows);
 
-    // responds with dog_id and name
+    // responds with dog_id and name of dogs under owner_id as json
     res.json(rows);
   } catch (error) {
     // console.error('SQL Error:', error);
