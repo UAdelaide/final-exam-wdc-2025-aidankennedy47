@@ -92,7 +92,7 @@
             // get request to get dogs of the owner
             let response = await fetch('/api/owners/dogs');
 
-            // stores response into dogs
+            // stores response into vue variable dogs
             dogs.value = await response.json();
           } catch (err) {
             error.value = 'Failed to load dog names for dropdown';
