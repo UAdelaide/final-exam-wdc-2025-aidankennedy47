@@ -57,7 +57,7 @@
               let response = await fetch('/api/users/dogs');
               let data = await response.json();
 
-              // dynamically adds photo property to each dog in the array registeredDogs
+              // dynamically adds photo property to each dog in the array data
               for (let dog of data){
                 // fetches dog image from dog API
                 let imgResponse = await fetch('https://dog.ceo/api/breeds/image/random');
@@ -65,6 +65,7 @@
                 dog.photo = imgData.message;
               }
 
+              // 
               this.registeredDogs = data;
               console.log(this.registeredDogs);
             }
