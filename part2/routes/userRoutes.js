@@ -41,7 +41,7 @@ router.post('/login', async (req, res) => {
 
   // deconstructs username and password from request body
   const { username, password } = req.body;
-  console.log(req.body);
+  // console.log(req.body);
   try {
     // finds user_id, username, and role from the Users table where the username and password match a user
     const [rows] = await db.query(`
@@ -56,7 +56,7 @@ router.post('/login', async (req, res) => {
 
     // user session is updated with user credentials from database
     req.session.user = rows[0];
-    console.log('Stored user in session: ', req.session.user);
+    // console.log('Stored user in session: ', req.session.user);
 
     // responds with successful login and user credentials
     res.json({ message: 'Login successful', user: rows[0] });
@@ -70,7 +70,7 @@ router.post('/logout', async (req, res) => {
   // deletes session
   req.session.destroy((err) => {
     if(err){
-      console.log("Logout error: ", err);
+      // console.log("Logout error: ", err);
       return res.status(500).json({ message: 'Logout failed!' });
     }
 
