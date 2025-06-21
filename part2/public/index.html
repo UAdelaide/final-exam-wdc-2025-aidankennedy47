@@ -53,6 +53,7 @@
       },
       methods:{
             async loadRegisteredList() {
+              // get request to get dogs
               let response = await fetch('/api/users/dogs');
               let data = await response.json();
 
