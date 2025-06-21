@@ -13,7 +13,7 @@ router.get('/dogs', async (req, res) => {
     // console.log(rows);
     res.json(rows);
   } catch (error) {
-    console.error('SQL Error:', error);
+    // console.error('SQL Error:', error);
     res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 });
