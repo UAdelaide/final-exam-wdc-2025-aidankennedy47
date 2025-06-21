@@ -8,12 +8,12 @@
 
 .index{
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .wrapper{
     position: relative;
-    flex-direction: column;
-    align-items: center;
 }
 
 body {
