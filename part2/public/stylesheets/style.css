@@ -22,12 +22,13 @@
     padding: 10px;
     background: transparent;
     color: red;
+    height: 10px;
 }
 
 .dashboardtop{
     display: flex;
     margin-bottom: 10px;
-    right: 100px;
+    justify-content: space-between;
 }
 
 .logout:hover{
