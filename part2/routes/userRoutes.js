@@ -74,7 +74,7 @@ router.post('/logout', async (req, res) => {
       return res.status(500).json({ message: 'Logout failed!' });
     }
 
-    // deletes cookie
+    // deletes cookie from browser
     res.clearCookie('connect.sid');
     res.json({ message: 'Logged out successfully!' });
   });
