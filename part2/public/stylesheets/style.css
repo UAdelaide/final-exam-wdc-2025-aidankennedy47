@@ -25,7 +25,8 @@
 }
 
 .dashboardtop{
-    justify-content: space-between;
+    display: flex;
+    margin-bottom: ;
 }
 
 .logout:hover{
