@@ -83,7 +83,7 @@
       let password = data.get('password');
 
       try{
-        //makes post request, 
+        //makes post request, sends JSON username and password
         let response = await fetch('/api/users/login', {
           method: 'POST',
           headers: {
@@ -92,6 +92,7 @@
           body: JSON.stringify({ username, password })  //gets json file from login
         });
 
+        //converts json from post request into
         let result = await response.json();
 
         //if response is ok, redirects to either owner or walker dashboard based off of role
