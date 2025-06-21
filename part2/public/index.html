@@ -92,7 +92,7 @@
           body: JSON.stringify({ username, password })  //gets json file from login
         });
 
-        //converts json from post request into
+        //converts json from post request into { message: 'Login successful', user: rows[0] }
         let result = await response.json();
 
         //if response is ok, redirects to either owner or walker dashboard based off of role
