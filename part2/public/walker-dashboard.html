@@ -62,6 +62,8 @@
           try {
             // makes get request and stores as res
             const res = await fetch('/api/users/me');
+
+            // if res is not ok, 
             if (!res.ok) throw new Error('Failed to load current user id');
 
             user.value = await res.json();
