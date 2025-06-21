@@ -4,7 +4,7 @@
 
 .loginButton{
     background-color: skyblue;
-    position: absolute;
+    margin-top: 10px;
 }
 
 .wrapper{
