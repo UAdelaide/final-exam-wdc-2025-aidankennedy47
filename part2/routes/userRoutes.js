@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
   const { username, password } = req.body;
   console.log(req.body);
   try {
-    //finds user_id, username, and role from the Users table where the username and 
+    //finds user_id, username, and role from the Users table where the username and password match
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
       WHERE username = ? AND password_hash = ?
