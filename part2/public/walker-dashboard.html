@@ -66,9 +66,9 @@
             // if res is not ok, sends error message
             if (!res.ok) throw new Error('Failed to load current user id');
 
-            // 
+            // stores response into vue variable user
             user.value = await res.json();
-            console.log("user value from current user", user.value);
+            //console.log("user value from current user", user.value);
           } catch (err) {
             error.value = err.message;
           }
