@@ -27,7 +27,7 @@
 .dashboardtop{
     display: flex;
     margin-bottom: 10px;
-    right: 10px
+    right: 100px;
 }
 
 .logout:hover{
