@@ -25,7 +25,8 @@
 }
 
 .logout:hover{
-    back
+    background-color: red;
+    color: white;
 }
 
 table, th, td{
