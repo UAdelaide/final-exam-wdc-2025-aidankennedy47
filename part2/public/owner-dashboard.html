@@ -155,6 +155,7 @@
     // listens to if the logout button is clicked
     document.getElementById("logoutButton").addEventListener('click', async function () {
       try{
+        //if clicked, sends post request to /logout
         let response = await fetch('/api/users/logout', {
         method: 'POST',
         credentials: "include",
@@ -163,6 +164,7 @@
         }
       });
 
+      // if response is ok, 
       if(response.ok){
           window.location.href = "index.html";
         }else{
